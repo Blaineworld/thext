@@ -1,0 +1,28 @@
+{
+	"name": "thext",
+	"version": "0.0.0",
+	"description": "A text editor for the many.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Blaineworld/thext.git"
+	},
+	"keywords": [
+		"live",
+		"collaborative",
+		"text",
+		"editor"
+	],
+	"author": "Blaineworld",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Blaineworld/thext/issues"
+	},
+	"homepage": "https://github.com/Blaineworld/thext#readme",
+	"dependencies": {
+		"ws": "^7.2.0"
+	}
+}
