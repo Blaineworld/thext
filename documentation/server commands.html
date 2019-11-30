@@ -1,0 +1,25 @@
+<h1>Thext's Server Commands</h1>
+<p>
+	This file details the various commands clients send to servers
+	to modify text buffers and all that fun stuff.
+	<br />
+	Read <a href="client commands.html">this</a> for the commands servers send.
+</p>
+
+<h2>Unauthenticated Commands</h2>
+<p>An unauthenticated client might send these commands&hellip;</p>
+
+<dl>
+	<dt><code>login &lt;string: name&gt; &lt;string: password&gt;</code></dt>
+	<dd>Attempts to authenticate the user.</dd>
+</dl>
+
+<h2>Authenticated Commands</h2>
+<p>An authenticated client might send these commands&hellip;</p>
+
+<dl>
+	<dt><code>logout &lt;String: Parting Message&gt;</code></dt>
+	<dd>Seamlessly logs the user out. Blank parting messages aren't sent.</dd>
+	<dt><code>say &lt;string: message&gt;</code></dt>
+	<dd>Sends a chat message.</dd>
+</dl>
