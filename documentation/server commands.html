@@ -10,7 +10,7 @@
 <p>An unauthenticated client might send these commands&hellip;</p>
 
 <dl>
-	<dt><code>login &lt;string: name&gt; &lt;string: password&gt;</code></dt>
+	<dt><code>LogIn &lt;<i>string</i> Username&gt; &lt;<i>string</i> Password&gt;</code></dt>
 	<dd>Attempts to authenticate the user.</dd>
 </dl>
 
@@ -18,8 +18,16 @@
 <p>An authenticated client might send these commands&hellip;</p>
 
 <dl>
-	<dt><code>logout &lt;String: Parting Message&gt;</code></dt>
+	<dt><code>LogOut &lt;<i>string</i> Parting Message&gt;</code></dt>
 	<dd>Seamlessly logs the user out. Blank parting messages aren't sent.</dd>
-	<dt><code>say &lt;string: message&gt;</code></dt>
+	<dt><code>Say &lt;<i>string</i> Message&gt;</code></dt>
 	<dd>Sends a chat message.</dd>
 </dl>
+
+<details>
+	<summary>Commands that require admin privelages&hellip;</summary>
+	<dl>
+		<dt><code>Kick &lt;<code><i>string</i> Username</code>&gt;</code></dt>
+		<dd></dd>
+	</dl>
+</details>

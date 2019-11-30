@@ -10,9 +10,9 @@
 <p>Any client should expect these commands&hellip;</p>
 
 <dl>
-	<dt><code>alert &lt;string: message&gt;</code></dt>
+	<dt><code>Alert &lt;<i>string</i> Message&gt;</code></dt>
 	<dd>Alerts the user to something.</dd>
-	<dt><code>kick &lt;string: message&gt;</code></dt>
+	<dt><code>Kicked &lt;<i>string</i> Reason&gt;</code></dt>
 	<dd>Alerts the user that they have been kicked.</dd>
 </dl>
 
@@ -20,7 +20,7 @@
 <p>An unauthenticated client should expect these commands&hellip;</p>
 
 <dl>
-	<dt><code>login-failure &lt;string: reason&gt;</code></dt>
+	<dt><code>LoginFailure &lt;<i>string</i> Reason&gt;</code></dt>
 	<dd>Indicates a failure to authenticate the user.</dd>
 </dl>
 
@@ -28,6 +28,6 @@
 <p>An authenticated client should expect these commands&hellip;</p>
 
 <dl>
-	<dt><code>said &lt;string: sender&gt; &lt;string: message&gt;</code></dt>
+	<dt><code>Said &lt;<i>string</i> Sender&gt; &lt;<i>string</i> Message&gt;</code></dt>
 	<dd>Displays a chat message.</dd>
 </dl>
