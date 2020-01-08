@@ -1,33 +1,53 @@
 <h1>Thext's Client Commands</h1>
 <p>
-	This file details the various commands servers send to clients
-	to update their text windows and all that fun stuff.
+	This file details the various commands that servers send to clients
+	to update their text displays, show messages, and other actions.
 	<br />
-	Read <a href="server commands.html">this</a> for the commands clients send.
+	See <a href="server commands.html">this document</a> for the
+	commands that clients send to servers.
 </p>
 
-<h2>Universal Commands</h2>
-<p>Any client should expect these commands&hellip;</p>
+<ol class="directory">
+	<li><a href="#auth">Authentication</a></li>
+	<li><a href="#edit">Editing</a></li>
+	<li><a href="#session">Session</a></li>
+</ol>
 
+<h2 id="auth">Authentication</h2>
 <dl>
-	<dt><code>Alert &lt;<i>string</i> Message&gt;</code></dt>
-	<dd>Alerts the user to something.</dd>
-	<dt><code>Kicked &lt;<i>string</i> Reason&gt;</code></dt>
-	<dd>Alerts the user that they have been kicked.</dd>
+	<dt><code>auth.login <var>string:username</var></code></dt>
+	<dd>
+		&hellip;informs the user that they were authenticated and under
+		what username they are logged in.
+	</dd>
+	<dt><code>auth.logout</code></dt>
+	<dd>
+		&hellip;informs the user that they were (unauthenticated?).
+	</dd>
 </dl>
 
-<h2>Unauthenticated Commands</h2>
-<p>An unauthenticated client should expect these commands&hellip;</p>
-
+<h2 id="edit">Editing</h2>
 <dl>
-	<dt><code>LoginFailure &lt;<i>string</i> Reason&gt;</code></dt>
-	<dd>Indicates a failure to authenticate the user.</dd>
+	<dt><code>edit.set <var>int64:first</var> <var>string:content(1)</var> <var>[string:content(2) ...]</var></code></dt>
+	<dd>
+		&hellip;sets the content of one or more lines.
+	</dd>
 </dl>
 
-<h2>Authenticated Commands</h2>
-<p>An authenticated client should expect these commands&hellip;</p>
-
+<h2 id="session">Session</h2>
 <dl>
-	<dt><code>Said &lt;<i>string</i> Sender&gt; &lt;<i>string</i> Message&gt;</code></dt>
-	<dd>Displays a chat message.</dd>
+	<dt><code>session.alert <var>string:message</var></code></dt>
+	<dd>
+		&hellip;displays a notification to the user.
+	</dd>
+	<dt><code>session.ban <var>[string:reason]</var></code></dt>
+	<dd>
+		&hellip;closes the connection, telling the user that they were
+		banned from this server and why.
+	</dd>
+	<dt><code>session.kick <var>[string:reason]</var></code></dt>
+	<dd>
+		&hellip;closes the connection, telling the user that they were
+		kicked from this server and why.
+	</dd>
 </dl>

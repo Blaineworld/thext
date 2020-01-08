@@ -1,33 +1,35 @@
 <h1>Thext's Server Commands</h1>
 <p>
-	This file details the various commands clients send to servers
-	to modify text buffers and all that fun stuff.
+	This file details the various commands that clients send to servers
+	to load text lines, open files, and other actions.
 	<br />
-	Read <a href="client commands.html">this</a> for the commands servers send.
+	See <a href="server commands.html">this document</a> for the
+	commands that servers send to clients.
 </p>
 
-<h2>Unauthenticated Commands</h2>
-<p>An unauthenticated client might send these commands&hellip;</p>
+<ol class="directory">
+	<li><a href="#auth">Authentication</a></li>
+	<li><a href="#edit">Editing</a></li>
+</ol>
 
+<h2 id="auth">Authentication</h2>
 <dl>
-	<dt><code>LogIn &lt;<i>string</i> Username&gt; &lt;<i>string</i> Password&gt;</code></dt>
-	<dd>Attempts to authenticate the user.</dd>
+	<dt><code>auth.login <var>string:username</var> <var>[string:password]</var></code></dt>
+	<dd>&hellip;attempts to authenticate the user.</dd>
+	<dt><code>auth.logout</code></dt>
+	<dd>&hellip;attempts to (unauthenticate?) the user.</dd>
+	<dt><code>auth.register <var>string:username</var> <var>[string:password]</var></code></code></dt>
+	<dd>&hellip;requests that a new user account is created.</dd>
 </dl>
 
-<h2>Authenticated Commands</h2>
-<p>An authenticated client might send these commands&hellip;</p>
-
+<h2 id="edit">Editing</h2>
 <dl>
-	<dt><code>LogOut &lt;<i>string</i> Parting Message&gt;</code></dt>
-	<dd>Seamlessly logs the user out. Blank parting messages aren't sent.</dd>
-	<dt><code>Say &lt;<i>string</i> Message&gt;</code></dt>
-	<dd>Sends a chat message.</dd>
+	<dt><code>edit.get <var>int64:first</var> <var>[int64:last]</var></code></dt>
+	<dd>
+		&hellip;requests the content of one or more lines.
+	</dd>
+	<dt><code>edit.set <var>int64:position</var> <var>string:content</var></code></dt>
+	<dd>
+		&hellip;replaces the content of a line.
+	</dd>
 </dl>
-
-<details>
-	<summary>Commands that require admin privelages&hellip;</summary>
-	<dl>
-		<dt><code>Kick &lt;<code><i>string</i> Username</code>&gt;</code></dt>
-		<dd></dd>
-	</dl>
-</details>
